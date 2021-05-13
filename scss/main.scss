@@ -1,0 +1,98 @@
+@import "colors";
+@import "fonts";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Spartan", sans-serif;
+  background-color: $white;
+  margin: 5.0625rem 1.5rem;
+
+  .title {
+    text-align: center;
+
+    .subtitle {
+      color: $veryDarkMagenta;
+      font-size: 1.75rem;
+      font-weight: 700;
+    }
+
+    p {
+        color: $darkGrayishMagenta;
+      padding-top: 1.5rem;
+      padding-bottom: 2.9375rem;
+    }
+  }
+
+  .ratings {
+    .card {
+      background-color: $lightGrayishMagenta;
+      border-radius: 5px;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      margin-top: 1rem;
+      text-align: center;
+
+      .ratingText {
+        color: $veryDarkMagenta;
+        padding-top: 0.8rem;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .reviews {
+    padding-top: 3.125rem;
+
+    .card {
+      padding: 2.375rem;
+      margin-bottom: 1rem;
+      background-color: $veryDarkMagenta;
+      border-radius: 7px;
+      color: $lightGrayishMagenta;
+      font-size: 0.75rem;
+
+      .imgageBox {
+        position: relative;
+      }
+
+      .image {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        img {
+          width: 41px;
+          height: 41px;
+          border-radius: 50%;
+        }
+      }
+      .creds {
+        margin-left: 64px;
+        height: 41px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        .name {
+          font-weight: 700;
+        }
+
+        .status {
+          color: $softPink;
+          margin-top: 0.2rem;
+        }
+      }
+
+      p {
+        margin-top: 1.3rem;
+        font-weight: 500;
+        line-height: 1.5rem;
+      }
+    }
+  }
+}
