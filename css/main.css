@@ -7,13 +7,78 @@
 }
 
 body {
+  position: relative;
   font-family: "Spartan", sans-serif;
   background-color: white;
   margin: 5.0625rem 1.5rem;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: -5.0625rem;
+  height: 232px;
+  right: -1.5rem;
+  left: -1.5rem;
+  background-image: url("../images/bg-pattern-top-mobile.svg");
+  background-size: cover;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  bottom: -5.0625rem;
+  height: 503px;
+  right: -1.5rem;
+  left: -1.5rem;
+  background-image: url("../images/bg-pattern-bottom-mobile.svg");
+  background-size: cover;
+}
+
+@media screen and (min-width: 1200px) {
+  body {
+    margin: 8rem auto;
+    width: 70rem;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: 2;
+        grid-template-rows: 2;
+        grid-template-areas: "title rating" "review review";
+  }
+  body::before {
+    content: "";
+    position: absolute;
+    top: -8rem;
+    left: 0;
+    height: 362px;
+    width: 584px;
+    background-image: url("../images/bg-pattern-top-desktop.svg");
+  }
+  body::after {
+    content: "";
+    position: absolute;
+    bottom: -8rem;
+    right: -30rem;
+    height: 673px;
+    width: 1085;
+    background-image: url("../images/bg-pattern-bottom-desktop.svg");
+    background-size: cover;
+  }
 }
 
 body .title {
   text-align: center;
+}
+
+@media screen and (min-width: 1200px) {
+  body .title {
+    grid-area: title;
+    text-align: left;
+    width: 80%;
+  }
 }
 
 body .title .subtitle {
@@ -22,10 +87,41 @@ body .title .subtitle {
   font-weight: 700;
 }
 
+@media screen and (min-width: 1200px) {
+  body .title .subtitle {
+    font-size: 2.5rem;
+  }
+}
+
 body .title p {
   color: #937b92;
   padding-top: 1.5rem;
   padding-bottom: 2.9375rem;
+}
+
+@media screen and (min-width: 1200px) {
+  body .title p {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  body .ratings {
+    grid-area: rating;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 body .ratings .card {
@@ -37,14 +133,62 @@ body .ratings .card {
   text-align: center;
 }
 
+@media screen and (min-width: 1200px) {
+  body .ratings .card {
+    width: 27.75rem;
+    text-align: left;
+  }
+  body .ratings .card:first-child {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+  body .ratings .card:last-child {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  body .ratings .card .starbox {
+    display: inline;
+    padding: 0 1.5rem;
+  }
+}
+
 body .ratings .card .ratingText {
   color: #502050;
   padding-top: 0.8rem;
   font-weight: 700;
 }
 
+@media screen and (min-width: 1200px) {
+  body .ratings .card .ratingText {
+    display: inline;
+  }
+}
+
 body .reviews {
   padding-top: 3.125rem;
+}
+
+@media screen and (min-width: 1200px) {
+  body .reviews {
+    grid-area: review;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 24rem;
+  }
 }
 
 body .reviews .card {
@@ -54,6 +198,21 @@ body .reviews .card {
   border-radius: 7px;
   color: #f7f2f7;
   font-size: 0.75rem;
+}
+
+@media screen and (min-width: 1200px) {
+  body .reviews .card {
+    width: 21.875rem;
+    margin-bottom: 0;
+  }
+  body .reviews .card:first-child {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+  body .reviews .card:last-child {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
 }
 
 body .reviews .card .imgageBox {
